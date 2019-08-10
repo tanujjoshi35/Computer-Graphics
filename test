@@ -8,7 +8,7 @@ public class Makemytrip {
 	public static WebDriver driver;
 	public static final By tripType = By.xpath("//ul//li[2]//span[@class='tabsCircle appendRight5']");
 	public static final By fromCity = By.xpath("//span[@class='lbl_input latoBold  appendBottom5']");
-	public static final By fromCityName = By.xpath("//input[@value='coimbatore']");
+	public static final By fromCityName = By.xpath("//input[@id="fromCity"]");
 
 	public static void setupBrowser() {
 		driver = new FirefoxDriver();
