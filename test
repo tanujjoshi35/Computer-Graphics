@@ -1,0 +1,59 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Makemytrip {
+
+	public static String url = "http://www.makemytrip.com/flights";
+	public static WebDriver driver;
+	public static final By tripType = By.xpath("//ul//li[2]//span[@class='tabsCircle appendRight5']");
+	public static final By fromCity = By.xpath("//span[@class='lbl_input latoBold  appendBottom5']");
+	public static final By fromCityName = By.xpath("//input[@value='coimbatore']");
+
+	public static void setupBrowser() {
+		driver = new FirefoxDriver();
+	}
+
+	public static void openURL(String url) {
+		driver.get(url);
+	}
+
+	public static void wait(int time) {
+		Thread.sleep(time);
+
+	}
+
+	public void static clickElement (WebElement element) {
+		element.click();
+	}
+
+	public void enterText(WebELement ele, String text) {
+
+		Actions ref = new Actions(driver);
+
+		action.sendKeys(text).build().perform();
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.gecko.driver", "//Users//rohitkumar//Downloads//geckodriver");
+
+		setupBrowser();
+
+		driver.manage().window().maximize();
+
+		openURL(url);
+
+		wait(5000);
+
+		clickElement(driver.findElement(tripType));
+
+		wait(5000);
+
+		clickElement(driver.findElements(fromCity).get(0));
+
+		enterText(driver.findElement(fromCityName));
+
+	}
+
+}
