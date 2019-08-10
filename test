@@ -52,7 +52,7 @@ public class Makemytrip {
 
 		clickElement(driver.findElements(fromCity).get(0));
 
-		enterText(driver.findElement(fromCityName));
+		enterText(driver.findElement(fromCityName),"Delhi");
 
 	}
 
