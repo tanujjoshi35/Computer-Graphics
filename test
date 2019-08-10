@@ -23,13 +23,13 @@ public class Makemytrip {
 
 	}
 
-	public void static clickElement (WebElement element) {
+	public static void clickElement (WebElement element) {
 		element.click();
 	}
 
 	public void enterText(WebELement ele, String text) {
 
-		Actions ref = new Actions(driver);
+		Actions action = new Actions(driver);
 
 		action.sendKeys(text).build().perform();
 	}
